@@ -62,13 +62,21 @@ class CuraParser(BaseParser):
 
     def parse_header(self, gcode_file):
         parameters = {}
-        for i in range(15):
+        for i in range(20):
             line = gcode_file.readline()
             if line.startswith(";"):
                 line = line.replace(";", "")
                 if line.startswith("TIME") or line.startswith("LAYER_COUNT"):
                     splitted = line.split(":", 1)
                     parameters.update({splitted[0]: splitted[1].strip()})
+
+                # Extracts additional data put in manually in the gcode via Cura
+                if line.startswith("Inicio"):
+                    while("Fin" not in line):
+                        if(":" in line):
+                            splitted = line.split(": ", 1)
+                            parameters.update({splitted[0]: splitted[1].strip()})
+                        line = gcode_file.readline().replace(";", "")
         gcode_file.seek(0)
         return parameters
 
@@ -282,10 +290,18 @@ class TestUniversalParser(unittest.TestCase):
     def test_cura_parse(self):
         uparser = UniversalParser(self.cura_file)
         result = uparser.parse()
-        self.assertEqual(len(result), 12)
+        self.assertEqual(len(result), 29)
         self.assertIn("adhesion_type", result)
         self.assertEqual(result["slicer_version"], "2.3.1")
+        self.assertEqual(result["Altura de capa"], "0.15")
+        self.assertEqual(result["Ancho de pared"], "0.8")
+        self.assertEqual(result["Temperatura de nozzle"], "230")
 
 
 if __name__ == "__main__":
     unittest.main()
+
+# Test to see if all parameters are saved
+#test = UniversalParser("parser_test/cura_test.gcode")
+#resultado = test.parse()
+#print resultado

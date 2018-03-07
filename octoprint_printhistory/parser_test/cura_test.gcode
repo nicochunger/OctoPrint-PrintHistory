@@ -4,6 +4,29 @@
 M84
 M84
 M84;M84
+;
+;Inicio de guardado de parametros
+;
+;Fecha: Wed 07-03-2018 00:13:24
+;Impresora: Unknown
+;Material: 2780b345-577b-4a24-a2c5-12e6aad3e690
+;Altura de capa: 0.15
+;Infill: 10
+;Velocidad de impresion: 60
+;Soporte: False
+;Planchado: False
+;Tiempo de impresion CURA: 01:43:55
+;Peso: [12.743291601562502]
+;Densidad del soporte: 15
+;Ancho de pared: 0.8
+;Temperatura de cama: 80
+;Temperatura de nozzle: 230
+;Retraccion: True
+;Distancia de retraccion: 5
+;Velocidad de retraccion: 40
+;
+;Fin de guardado de parametros
+;
 ;LAYER_COUNT:1476
 ;LAYER:0
 ;M84
