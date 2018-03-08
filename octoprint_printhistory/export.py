@@ -1,6 +1,6 @@
 # coding=utf-8
 
-__author__ = "Jarek Szczepanski <imrahil@imrahil.com>"
+__author__ = "Outreach" #"Jarek Szczepanski <imrahil@imrahil.com>"
 __license__ = "GNU Affero General Public License http://www.gnu.org/licenses/agpl.html"
 __copyright__ = "Copyright (C) 2014 Jarek Szczepanski - Released under terms of the AGPLv3 License"
 

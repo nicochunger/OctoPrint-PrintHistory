@@ -8,9 +8,9 @@ plugin_package = "octoprint_%s" % plugin_identifier
 plugin_name = "OctoPrint-PrintHistory"
 plugin_version = "1.2"
 plugin_description = "Saves filename, print time and filament usage for each print"
-plugin_author = "Jarek Szczepanski"
-plugin_author_email = "imrahil@imrahil.com"
-plugin_url = "https://github.com/imrahil/OctoPrint-PrintHistory"
+plugin_author = "Outreach" #"Jarek Szczepanski"
+plugin_author_email = "creame3d@creame3d.com" #"imrahil@imrahil.com"
+plugin_url = "https://github.com/nicochunger/OctoPrint-PrintHistory"
 plugin_license = "AGPLv3"
 plugin_additional_data = []
 
